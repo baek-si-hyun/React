@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head></head>
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+        const root = document.getElementById("root")
+        function Title() {
+            return(
+            <h3 id="title" onMouseEnter={() => console.log("mouse enter")}>
+                im a title
+            </h3>
+        );} // jsx
+        const Button = () => (
+            <button style={{
+                backgroundColor: "tomato",
+            }}
+            onClick={() => console.log("im click")}
+            >
+            click me
+            </button>
+        );
+        const Container = () => (<div>
+            <button>Hello</button> 
+            <Title /> 
+            <Button /> 
+            </div>)//반드시 컴포넌트의 첫문자는 대문자로 적어줘야한다(html요소와 구별하기 위해)
+        ReactDOM.render(<Container />, root) //render: React element를 가지고 HTML로 만들어 배치한다는 것(사용자에게 보여준다)
+</script>
+</html>
